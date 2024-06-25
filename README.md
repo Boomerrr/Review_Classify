@@ -9,7 +9,7 @@
 `../roberta` 
 
 ## step2：安装依赖环境 
-### 创建conda环境(可用falcon同一环境，FalconEnvi)
+### 创建conda环境
 `conda create -n Review_Classify python=3.10`
 ### 激活conda环境
 `conda activate Review_Classify `
