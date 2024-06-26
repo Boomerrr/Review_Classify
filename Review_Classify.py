@@ -94,13 +94,13 @@ torch.cuda.manual_seed_all(seed)
 torch.backends.cudnn.deterministic = True
 
 
-with open('../data/train_classify_data.pkl', 'rb') as f:
+with open('./data/train_classify_data.pkl', 'rb') as f:
     train_tokenized_data = pickle.load(f)
 
-with open('../data/valid_classify_data.pkl', 'rb') as f:
+with open('./data/valid_classify_data.pkl', 'rb') as f:
     valid_tokenized_data = pickle.load(f)
 
-with open('../data/test_filter_classify_data.pkl', 'rb') as f:
+with open('./data/test_filter_classify_data.pkl', 'rb') as f:
     test_tokenized_data = pickle.load(f)
 
 #train_tokenized_data = train_tokenized_data[:50]
@@ -109,11 +109,11 @@ with open('../data/test_filter_classify_data.pkl', 'rb') as f:
 
 # Tokenizer from transformers
 if model=='ROBERTA_CLS':
-    model_path = '../model/roberta_base'
+    model_path = './roberta_base'
     tokenizer = RobertaTokenizer.from_pretrained(model_path)
     model = Feature_Aug_Classify(model,model_path=model_path,hidden_size = hidden_size,head_num = 12,pos = True,content = True,dependency = True)
 elif model=='BERT_CLS':
-    model_path = '../model/bert_base'
+    model_path = './bert_base'
     tokenizer = BertTokenizer.from_pretrained(model_path)
     model = Feature_Aug_Classify(model,model_path=model_path,hidden_size = hidden_size,head_num = 12,pos = True ,content = True,dependency = True)
 
@@ -215,7 +215,7 @@ for epoch in range(epochs):
 model.load_state_dict(best_model)
 model.eval()
 
-torch.save(model.state_dict(), '../saved_model/1_1_1_review_classify_model_roberta.pth')
+torch.save(model.state_dict(), './saved_model/1_1_1_review_classify_model_roberta.pth')
 
 all_labels = []
 all_predictions = []
