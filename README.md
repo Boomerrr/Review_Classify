@@ -5,8 +5,8 @@ https://huggingface.co/google-bert/bert-base-uncased
 https://huggingface.co/FacebookAI/roberta-base
 
 ### 模型文件存放位置  
-../bert  
-../roberta 
+`./bert_base`  
+`./roberta_base`  
 
 ## step2：安装依赖环境 
 ### 创建conda环境
@@ -25,6 +25,7 @@ https://huggingface.co/FacebookAI/roberta-base
 --seed 随机数   
 --batch_size 批次数（设置为64 24G显卡会爆显存）  
 --learning_rate 学习率   
+--weight_decay 权重衰减
 --max_seq_len 字符填充长度  
 --hidden_size 图卷积网络输出节点维度  
 
