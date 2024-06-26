@@ -25,7 +25,7 @@ https://huggingface.co/FacebookAI/roberta-base
 --seed 随机数   
 --batch_size 批次数（设置为64 24G显卡会爆显存）  
 --learning_rate 学习率   
---weight_decay 权重衰减
+--weight_decay 权重衰减  
 --max_seq_len 字符填充长度  
 --hidden_size 图卷积网络输出节点维度  
 
